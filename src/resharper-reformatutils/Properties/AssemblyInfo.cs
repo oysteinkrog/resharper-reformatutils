@@ -19,7 +19,6 @@ using JetBrains.Application.PluginSupport;
 [assembly: AssemblyCulture("")]
 [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyFileVersion("1.0.*")]
-[assembly: ActionsXml("resharper_reformatutils.Actions.xml")]
 
 // The following information is displayed by ReSharper in the Plugins dialog
 
