@@ -13,7 +13,7 @@ using JetBrains.Application.PluginSupport;
 ]
 
 [assembly: AssemblyCompany("Øystein Krog")]
-[assembly: AssemblyProduct("resharper-reformatutils")]
+[assembly: AssemblyProduct("ReformatUtils")]
 [assembly: AssemblyCopyright("Copyright © Øystein Krog, 2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

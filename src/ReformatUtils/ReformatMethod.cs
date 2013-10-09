@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Linq.Expressions;
 using JetBrains.Application.Progress;
 using JetBrains.ProjectModel;
-using JetBrains.ReSharper.Feature.Services.ArchitectureModel.Graph;
 using JetBrains.ReSharper.Feature.Services.Bulbs;
 using JetBrains.ReSharper.Feature.Services.CSharp.Bulbs;
 using JetBrains.ReSharper.Intentions.Extensibility;
@@ -12,34 +10,34 @@ using JetBrains.ReSharper.Psi.Tree;
 using JetBrains.TextControl;
 using JetBrains.Util;
 
-namespace resharper_reformatutils
+namespace ReformatUtils
 {
-    [ContextAction(Name = "ReformatClass", Description = "Reformat class", Group = "C#")]
-    public class ReformatClass : ContextActionBase
+    [ContextAction(Name = "ReformatMethod", Description = "Reformat method", Group = "C#")]
+    public class ReformatMethod : ContextActionBase
     {
         private readonly ICSharpContextActionDataProvider _provider;
-        private IClassDeclaration _classDeclaration;
+        private IMethodDeclaration _methodDeclaration;
 
-        public ReformatClass(ICSharpContextActionDataProvider provider)
+        public ReformatMethod(ICSharpContextActionDataProvider provider)
         {
             _provider = provider;
         }
 
         public override string Text
         {
-            get { return "Reformat class"; }
+            get { return "Reformat method"; }
         }
 
         public override bool IsAvailable(IUserDataHolder cache)
         {
-            var classDeclaration = _provider.GetSelectedElement<IClassDeclaration>(false, true);
-            if (classDeclaration != null)
+            var methodDeclaration = _provider.GetSelectedElement<IMethodDeclaration>(false, true);
+            if (methodDeclaration != null)
             {
-                // ensure that we are on a class and not just inside the scope of a classS
-                if (_provider.SelectedElement != null && classDeclaration != _provider.SelectedElement.Parent)
+                // ensure that we are on a method and not just inside the scope of a method
+                if (_provider.SelectedElement != null && methodDeclaration != _provider.SelectedElement.Parent)
                     return false;
 
-                _classDeclaration = classDeclaration;
+                _methodDeclaration = methodDeclaration;
                 return true;
             }
             return false;
@@ -47,11 +45,11 @@ namespace resharper_reformatutils
 
         protected override Action<ITextControl> ExecutePsiTransaction(ISolution solution, IProgressIndicator progress)
         {
-            if (_classDeclaration == null) return null;
+            if (_methodDeclaration == null) return null;
 
-            using (_classDeclaration.Body.CreateWriteLock())
+            using (_methodDeclaration.Body.CreateWriteLock())
             {
-                _classDeclaration.Body.FormatNode();
+                _methodDeclaration.Body.FormatNode();
             }
             return null;
         }

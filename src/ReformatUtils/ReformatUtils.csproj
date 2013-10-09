@@ -8,8 +8,8 @@
     <ProjectGuid>{8A102EED-A981-4202-B73F-02242494251F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>resharper_reformatutils</RootNamespace>
-    <AssemblyName>resharper-reformatutils</AssemblyName>
+    <RootNamespace>ReformatUtils</RootNamespace>
+    <AssemblyName>ReformatUtils</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
