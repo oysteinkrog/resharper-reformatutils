@@ -17,8 +17,8 @@ using JetBrains.Application.PluginSupport;
 [assembly: AssemblyCopyright("Copyright © Øystein Krog, 2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
-[assembly: AssemblyVersion("1.2.0.*")]
-[assembly: AssemblyFileVersion("1.2.0.*")]
+[assembly: AssemblyVersion("1.3.0.*")]
+[assembly: AssemblyFileVersion("1.3.0.*")]
 
 // The following information is displayed by ReSharper in the Plugins dialog
 
