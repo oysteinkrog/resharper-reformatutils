@@ -2,4 +2,4 @@
 setlocal enableextensions
 
 mkdir ReformatUtils 2> NUL
-copy /y ..\src\resharper-reformatutils\bin\Release\* ReformatUtils
+copy /y ..\src\ReformatUtils\bin\Release\* ReformatUtils
