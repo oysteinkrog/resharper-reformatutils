@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>ReformatUtils</id>
         <version>1.2</version>
@@ -11,6 +11,8 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>Actions and shortcuts for reformatting based on scope (e.g. reformat method)
 NOTE: Actions must be assigned shortcuts/keys manually due to SDK restrictions.</description>
+        <releaseNotes>1.2: Add reformat contex action for interface declarations.
+1.1: Released on ReSharper Gallery, reformat context actions on class and method declarations.</releaseNotes>
         <dependencies>
             <dependency id="ReSharper" version="8.0" />
         </dependencies>
