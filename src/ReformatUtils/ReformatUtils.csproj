@@ -48,6 +48,10 @@
     <Compile Include="ReformatClass.cs" />
     <Compile Include="ReformatInterface.cs" />
     <Compile Include="ReformatMethod.cs" />
+    <Compile Include="ReformatMethodAction.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Actions.xml" />
   </ItemGroup>
   <PropertyGroup>
     <ReSharperSdkTargets Condition=" '$(ReSharperSdkTargets)' == '' ">$(MSBuildExtensionsPath)\JetBrains\ReSharper.SDK\v8.0</ReSharperSdkTargets>
