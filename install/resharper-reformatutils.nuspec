@@ -1,1 +1,21 @@
-<?xml version="1.0"?><package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">  <metadata>    <id>ReformatUtils</id>    <version>1.2</version>    <authors>Øystein Krog</authors>    <owners>Øystein Krog</owners>    <requireLicenseAcceptance>false</requireLicenseAcceptance>    <projectUrl>https://github.com/oysteinkrog/resharper-reformatutils</projectUrl>    <licenseUrl>https://github.com/oysteinkrog/resharper-reformatutils/blob/master/LICENSE</licenseUrl>    <iconUrl>http://resharper-plugins.jetbrains.com/Content/Images/packageReSharper.png</iconUrl>    <description>Actions and shortcuts for reformatting based on scope (e.g. reformat method)</description>    <dependencies>      <dependency id="ReSharper" version="8.0" />    </dependencies>  </metadata>  <files>    <file src="ReformatUtils\ReformatUtils.dll"          target="ReSharper\v8.0\plugins\" />  </files></package>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>ReformatUtils</id>
+        <version>1.2</version>
+        <authors>Øystein Krog</authors>
+        <owners>Øystein Krog</owners>
+        <licenseUrl>https://github.com/oysteinkrog/resharper-reformatutils/blob/master/LICENSE</licenseUrl>
+        <projectUrl>https://github.com/oysteinkrog/resharper-reformatutils</projectUrl>
+        <iconUrl>http://resharper-plugins.jetbrains.com/Content/Images/packageReSharper.png</iconUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Actions and shortcuts for reformatting based on scope (e.g. reformat method)
+NOTE: Actions must be assigned shortcuts/keys manually due to SDK restrictions.</description>
+        <dependencies>
+            <dependency id="ReSharper" version="8.0" />
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="ReformatUtils\ReformatUtils.dll" target="ReSharper\v8.0\plugins\ReformatUtils.dll" />
+    </files>
+</package>
