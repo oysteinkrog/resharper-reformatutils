@@ -18,7 +18,6 @@ using JetBrains.Application.PluginSupport;
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: AssemblyVersion("1.3.0.*")]
-[assembly: AssemblyFileVersion("1.3.0.*")]
 
 // The following information is displayed by ReSharper in the Plugins dialog
 
