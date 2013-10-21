@@ -1,4 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <actions>
   <action id="ReformatUtils.ReformatMethodAction" text="Reformat Method"/>
+  <action id="ReformatUtils.ReformatStatementAction" text="Reformat Statement"/>
 </actions>
