@@ -48,6 +48,7 @@
     <Compile Include="ContextActions\Base\ReformatTreeNodeContextActionBase.cs" />
     <Compile Include="ContextActions\Base\ReformatClassLikeDeclarationContextActionBase.cs" />
     <Compile Include="Actions\ReformatStatementAction.cs" />
+    <Compile Include="ContextActions\ReformatStruct.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ContextActions\ReformatClass.cs" />
     <Compile Include="ContextActions\ReformatInterface.cs" />
