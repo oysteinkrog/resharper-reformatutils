@@ -11,14 +11,12 @@ using JetBrains.Application.PluginSupport;
     AssemblyDescription(
         "A resharper plugin that provides actions and shortcuts for reformatting based on scope (e.g. reformat method)")
 ]
-
 [assembly: AssemblyCompany("Øystein Krog")]
 [assembly: AssemblyProduct("ReformatUtils")]
 [assembly: AssemblyCopyright("Copyright © Øystein Krog, 2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: AssemblyVersion("1.4.1.*")]
-
 [assembly: ActionsXml("ReformatUtils.Actions.xml")]
 
 // The following information is displayed by ReSharper in the Plugins dialog

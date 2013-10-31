@@ -1,22 +1,23 @@
-﻿using System;
+using System;
 using JetBrains.ActionManagement;
 using JetBrains.Annotations;
 using JetBrains.Application.DataContext;
+using JetBrains.ProjectModel;
 using JetBrains.ReSharper.Psi.CodeStyle;
-using JetBrains.ReSharper.Psi.CSharp.Tree;
 using JetBrains.ReSharper.Psi.Services;
 using JetBrains.ReSharper.Psi.Transactions;
 using JetBrains.ReSharper.Psi.Tree;
+using JetBrains.TextControl;
+using DataConstants = JetBrains.TextControl.DataContext.DataConstants;
 
-namespace ReformatUtils
+namespace ReformatUtils.Actions.Base
 {
-    [ActionHandler("ReformatUtils.ReformatMethodAction")]
-    public class ReformatMethodAction : IActionHandler
+    public abstract class ReformatTreeNodeActionHandlerBase<T> : IActionHandler where T : class, ITreeNode
     {
         public bool Update(IDataContext context, ActionPresentation presentation, DelegateUpdate nextUpdate)
         {
             // must be in a text control
-            var textControl = context.GetData(JetBrains.TextControl.DataContext.DataConstants.TEXT_CONTROL);
+            ITextControl textControl = context.GetData(DataConstants.TEXT_CONTROL);
             if (textControl == null)
                 return false;
             return true;
@@ -32,20 +33,24 @@ namespace ReformatUtils
             }
             else
             {
-                var textControl = context.GetData(JetBrains.TextControl.DataContext.DataConstants.TEXT_CONTROL);
+                ITextControl textControl = context.GetData(DataConstants.TEXT_CONTROL);
                 if (textControl == null)
                     return;
-                var solution = context.GetData(JetBrains.ProjectModel.DataContext.DataConstants.SOLUTION);
+                ISolution solution = context.GetData(JetBrains.ProjectModel.DataContext.DataConstants.SOLUTION);
 
-                // WORKS
-                var elementPointed = TextControlToPsi.GetElementPointedByUser<IMethodDeclaration>(solution, textControl);
+                var elementPointed = TextControlToPsi.GetElementPointedByUser<T>(solution, textControl);
                 if (elementPointed != null)
                 {
-                    FormatSafeWithTransaction(elementPointed.Body);
+                    ITreeNode nodeToFormat = GetNodeToFormat(elementPointed);
+                    if (nodeToFormat != null)
+                    {
+                        FormatSafeWithTransaction(nodeToFormat);
+                    }
                 }
-
             }
         }
+
+        protected abstract ITreeNode GetNodeToFormat(T element);
 
         private static void FormatSafeWithTransaction([NotNull] ITreeNode node)
         {
