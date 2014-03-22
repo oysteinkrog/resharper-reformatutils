@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>ReformatUtils</id>
-        <version>1.5.1</version>
+        <version>1.5.2</version>
         <authors>Øystein Krog</authors>
         <owners>Øystein Krog</owners>
         <licenseUrl>https://github.com/oysteinkrog/resharper-reformatutils/blob/master/LICENSE</licenseUrl>
@@ -11,7 +11,8 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>Actions and shortcuts for reformatting based on scope (e.g. reformat method)
 NOTE: Actions must be assigned shortcuts/keys manually due to SDK restrictions.</description>
-        <releaseNotes>1.5.1 Update for ReSharper 8.1 compatibility.
+        <releaseNotes>1.5.2 Update for ReSharper 8.2 compatibility.
+1.5.1 Update for ReSharper 8.1 compatibility.
 1.5.0: Add reformat struct context action.
 1.4.1: Fix bug where actions were not registered.
 1.4: Add reformat (current) statement action (must be bound manually).
@@ -19,11 +20,12 @@ NOTE: Actions must be assigned shortcuts/keys manually due to SDK restrictions.<
 1.2: Add reformat context action for interface declarations.
 1.1: Released on ReSharper Gallery, reformat context actions on class and method declarations.</releaseNotes>
         <dependencies>
-            <dependency id="ReSharper" version="8.0" />
+            <dependency id="ReSharper" version="[8.1,8.3)"/>
         </dependencies>
     </metadata>
     <files>
         <file src="ReformatUtils\ReformatUtils.dll" target="ReSharper\v8.0\plugins\ReformatUtils.dll" />
         <file src="ReformatUtils\ReformatUtils.dll" target="ReSharper\v8.1\plugins\ReformatUtils.dll" />
+        <file src="ReformatUtils\ReformatUtils.dll" target="ReSharper\v8.2\plugins\ReformatUtils.dll" />
     </files>
 </package>
